@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}" >
+	<meta charset="UTF-8">
+	<title>作業者マスタ登録</title>
+</head>
+<body>
+	<header>
+		<h1>
+			<a href="/index">作業者マスタ登録</a>
+		</h1>
+	</header>
+	<div class="contents">
+		<form method="post" th:action="@{/edit/update}" th:object="${updFormModel}">
+			<input type="hidden" name="kanri_no" th:value="${updateData.kanri_no}">
+			<p><label>作業者ID：</label><input type="text" name="user_id" th:value="${updateData.user_id}" maxlength='30'>
+			<p><label>作業者名：</label><input type="text" name="user_nm" th:value="${updateData.user_nm}" maxlength='30'>
+			<p><label>部門：</label>
+			<select name="bumon_cd">
+				<option
+					th:each="bumon : ${bumonList}"
+					th:value="${bumon.bumon_cd}"
+					th:text="${bumon.bumon_mei}"
+					th:selected="${bumon.bumon_cd == selectedBumonCd}">
+				</option>
+			</select></p>
+			<p><label>ロール：</label><input type="text" name="role_id" th:value="${updateData.role_id}" maxlength='5'></p>
+			<p><label>メールアドレス：</label><input type="text" name="address" th:value="${updateData.address}" maxlength='30'></p>
+			<p><label>携帯番号：</label><input type="text" name="phone" th:value="${updateData.phone}" maxlength='13'></p>
+			<input type="checkbox" name="muko_flg" th:checked="${updateData.muko_flg}">無効フラグ<p>
+			<input type="submit" name="update" value="登録する"> <input type="submit" name="delete" value="削除する">
+		</form>
+		<input type="button" value="戻る" onClick="history.back()">
+	</div>
+	<footer>
+    <br>
+    </footer>
+</body>
+</html>
