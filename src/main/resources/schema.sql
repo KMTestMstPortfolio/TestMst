@@ -8,7 +8,7 @@ CREATE TABLE M01
    user_id VARCHAR(30),
    user_nm VARCHAR(30),
    bumon_cd VARCHAR(5),
-   role_id VARCHAR(5),
+   sagyoba_mei VARCHAR(30),
    address VARCHAR(30),
    phone VARCHAR(13),
    torokubi DATETIME,

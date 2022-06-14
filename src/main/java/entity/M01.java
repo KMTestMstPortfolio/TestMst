@@ -15,8 +15,8 @@ public class M01 {
 	private String user_nm;
 	/** 部門コード */
 	private String bumon_cd;
-	/** ロール */
-	private String role_id;
+	/** 作業場 */
+	private String sagyoba_mei;
 	/** メールアドレス */
 	private String address;
 	/** 携帯番号 */

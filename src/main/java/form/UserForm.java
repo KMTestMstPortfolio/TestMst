@@ -16,8 +16,8 @@ public class UserForm {
 	private String bumon_cd;
 	/** 部門名 */
 	private String bumon_mei;
-	/** ロール */
-	private String role_id;
+	/** 作業場 */
+	private String sagyoba_mei;
 	/** メールアドレス */
 	private String address;
 	/** 携帯番号 */

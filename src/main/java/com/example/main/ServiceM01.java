@@ -36,7 +36,7 @@ public class ServiceM01 {
         		row.setUser_id((String)map.get("User_id"));
         		row.setUser_nm((String)map.get("User_nm"));
         		row.setBumon_mei((String)map.get("Bumon_mei"));
-        		row.setRole_id((String)map.get("Role_id"));
+        		row.setSagyoba_mei((String)map.get("Sagyoba_mei"));
         		row.setAddress((String)map.get("Address"));
         		row.setPhone((String)map.get("Phone"));
         		row.setTorokubi((LocalDateTime)map.get("Torokubi"));

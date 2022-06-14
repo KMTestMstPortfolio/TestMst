@@ -4,34 +4,68 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/style.css}" >
 	<meta charset="UTF-8">
 	<title>作業者マスタ登録</title>
+	<script type="text/javascript">
+	function check(){
+		if(!window.confirm("削除します。よろしいですか？")){
+			return false;
+		}
+		return true;
+	}
+	</script>
 </head>
 <body>
 	<header>
 		<h1>
-			<a href="/index">作業者マスタ登録</a>
+			<a href="/index">作業者マスタメンテナンス</a>
 		</h1>
 	</header>
 	<div class="contents">
-		<form method="post" th:action="@{/edit/update}" th:object="${updFormModel}">
+		<form method="post" name="update_form" th:action="@{/edit/update}" th:object="${updFormModel}">
 			<input type="hidden" name="kanri_no" th:value="${updateData.kanri_no}">
-			<p><label>作業者ID：</label><input type="text" name="user_id" th:value="${updateData.user_id}" maxlength='30'>
-			<p><label>作業者名：</label><input type="text" name="user_nm" th:value="${updateData.user_nm}" maxlength='30'>
-			<p><label>部門：</label>
-			<select name="bumon_cd">
+			<table class="edit_table">
+			<tr>
+	            <td colspan="2">以下の内容を入力してください。</td>
+	        </tr>
+			<tr>
+	            <td>作業者ID</td>
+	            <td><input type="text" name="user_id" th:value="${updateData.user_id}" maxlength='30'></td>
+	        </tr>
+			<tr>
+	            <td>作業者名</td>
+	            <td><input type="text" name="user_nm" th:value="${updateData.user_nm}" maxlength='30'></td>
+	        </tr>
+			<tr>
+	            <td>部門</td>
+	            <td><select name="bumon_cd">
 				<option
 					th:each="bumon : ${bumonList}"
 					th:value="${bumon.bumon_cd}"
 					th:text="${bumon.bumon_mei}"
 					th:selected="${bumon.bumon_cd == selectedBumonCd}">
 				</option>
-			</select></p>
-			<p><label>ロール：</label><input type="text" name="role_id" th:value="${updateData.role_id}" maxlength='5'></p>
-			<p><label>メールアドレス：</label><input type="text" name="address" th:value="${updateData.address}" maxlength='30'></p>
-			<p><label>携帯番号：</label><input type="text" name="phone" th:value="${updateData.phone}" maxlength='13'></p>
-			<input type="checkbox" name="muko_flg" th:checked="${updateData.muko_flg}">無効フラグ<p>
-			<input type="submit" name="update" value="登録する"> <input type="submit" name="delete" value="削除する">
+				</select>
+	            </td>
+	        </tr>
+			<tr>
+	            <td>作業場</td>
+	            <td><input type="text" name="sagyoba_mei" th:value="${updateData.sagyoba_mei}" maxlength='30'></td>
+	        </tr>
+			<tr>
+	            <td>メールアドレス</td>
+	            <td><input type="text" name="address" th:value="${updateData.address}" maxlength='30'></td>
+	        </tr>
+			<tr>
+	            <td>携帯番号</td>
+	            <td><input type="number" name="phone" th:value="${updateData.phone}" maxlength='13'></td>
+	        </tr>
+			<tr>
+	            <td>無効フラグ</td>
+	            <td><input type="checkbox" name="muko_flg" th:checked="${updateData.muko_flg}"></td>
+	        </tr>
+	        </table>
 		</form>
-		<input type="button" value="戻る" onClick="history.back()">
+		<p><input type="submit" name="update" class="btn_update" value="登録する"> <input type="submit" name="delete" class="btn_delete" value="削除する"></p>
+		<p><input type="button" value="戻る" class="btn_back" onClick="history.back()"></p>
 	</div>
 	<footer>
     <br>

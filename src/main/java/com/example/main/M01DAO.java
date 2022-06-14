@@ -19,7 +19,7 @@ public class M01DAO {
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
 
 	public List<Map<String, Object>> selectM01(UserForm param) {
-		String query = "SELECT M01.KANRI_NO,M01.KOSHINBI,M01.TOROKUBI,M01.USER_ID,M01.USER_NM,M01.ROLE_ID,M01.ADDRESS,M01.PHONE,M01.MUKO_FLG "
+		String query = "SELECT M01.KANRI_NO,M01.KOSHINBI,M01.TOROKUBI,M01.USER_ID,M01.USER_NM,M01.SAGYOBA_MEI,M01.ADDRESS,M01.PHONE,M01.MUKO_FLG "
 				+ ",M02.BUMON_MEI "
 				+ "FROM M01 INNER JOIN M02 ON M01.BUMON_CD = M02.BUMON_CD "
 				+ "WHERE 1=1 ";
@@ -83,7 +83,7 @@ public class M01DAO {
 				+ "'" + param.getUser_id() + "',"
 				+ "'" + param.getUser_nm() + "',"
 				+ "'" + param.getBumon_cd() + "',"
-				+ "'" + param.getRole_id() + "',"
+				+ "'" + param.getSagyoba_mei() + "',"
 				+ "'" + param.getAddress() + "',"
 				+ "'" + param.getPhone() + "',"
 				+ "'" + dateFormat.format(nowDate) + "',"
@@ -111,7 +111,7 @@ public class M01DAO {
 				+ "USER_ID = " + "'" + param.getUser_id() + "',"
 				+ "USER_NM = " + "'" + param.getUser_nm() + "',"
 				+ "BUMON_CD = " + "'" + param.getBumon_cd() + "',"
-				+ "ROLE_ID = " + "'" + param.getRole_id() + "',"
+				+ "SAGYOBA_MEI = " + "'" + param.getSagyoba_mei() + "',"
 				+ "ADDRESS = " + "'" + param.getAddress() + "',"
 				+ "PHONE = " + "'" + param.getPhone() + "',"
 				+ "MUKO_FLG = " + param.isMuko_flg()

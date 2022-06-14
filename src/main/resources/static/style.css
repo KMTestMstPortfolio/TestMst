@@ -1,9 +1,9 @@
 @charset "utf-8";
 
 header {
-    background-color: #99ccff;  /* 背景色指定 */
-    width: 1200px;               /* 幅指定 */
-    margin:  0 auto;            /* 中央寄せ */
+    background-color: #99ccff;
+    width: 1200px;
+    margin:  0 auto;
     padding: 10px;
     text-align: right;
 }
@@ -20,25 +20,40 @@ body{
 	padding: 0;
 	font-family: "游ゴシック",sans-serif;
 	font-size: 16px;
-    background-color: rgb(255, 255, 255);  /* 背景色指定 */
+    background-color: #ffffff;
 }
 
 .contents{
-    background-color: #ffffff;  /* 背景色指定 */
     width: 1200px;               /* 幅指定 */
     margin:  0 auto;            /* 中央寄せ */
     padding: 10px;
     line-height: 1.5;
-}
-
-.searchTitle{
-	font-size: 18px;
-	font-weight: bold;
+    text-align: left;
 }
 
 .search{
 	border-bottom: 1px solid;
 	border-color: rgb(128, 128, 128);
+}
+
+.result {
+    margin:  0 auto;
+    text-align: left;
+}
+
+.result_table {
+    border-collapse: collapse;
+}
+
+.result_table th{
+	border-bottom:1px solid #333333;
+    background: #D8EBFF;
+    padding:10px;
+}
+
+.result_table td{
+    border-bottom:1px solid #333333;
+    padding:10px;
 }
 
 footer {
@@ -52,4 +67,79 @@ footer {
 a:visited{
   color: inherit;
   text-decoration:none;
+}
+
+.search_table {
+    border-collapse: collapse;
+}
+
+.search_table th {
+	padding: 5px 10px;
+	font-size: 18px;
+}
+
+.search_table td {
+	padding: 5px 10px;
+}
+
+.edit_table {
+    /* border-spacing: 20px 10px; */
+    border-collapse: collapse;
+}
+
+.edit_table th {
+	padding: 5px 10px;
+	font-size: 18px;
+}
+
+.edit_table td {
+	padding: 5px 10px;
+}
+
+.btn_search {
+  background-color: #339966;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 5px 20px;
+  border: none;
+}
+
+.btn_edit {
+  background-color: #cccccc;
+  color: #000000;
+  border-radius: 5px;
+  padding: 5px 20px;
+  border: none;
+}
+
+.btn_insert {
+  background-color: #ff9933;
+  color: #000000;
+  border-radius: 5px;
+  padding: 5px 20px;
+  border: none;
+}
+
+.btn_update {
+  background-color: #339966;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 5px 20px;
+  border: none;
+}
+
+.btn_delete {
+  background-color: #cc3333;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 5px 20px;
+  border: none;
+}
+
+.btn_back {
+  background-color: #cccccc;
+  color: #000000;
+  border-radius: 5px;
+  padding: 5px 20px;
+  border: none;
 }
